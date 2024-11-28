@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>Hit and Blow</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body id = "game-body">
+  <div class = "shutter"></div>
+
+  <div class = "game-container">
+    <div class = "left-side">
+      <div>
+        <div>
+          <span id = "count-timer"></span>
+        </div>
+
+        <div class = "response-zone">
+          <div>
+            <input type="number" id="num1" value="" min="0" max="9" required maxlength="1"/>
+            <input type="number" id="num2" value="" min="0" max="9" required maxlength="1"/>
+            <input type="number" id="num3" value="" min="0" max="9" required maxlength="1"/>
+          </div>
+          <div>
+            <input type="button" id="sendbutton" value="決定" onclick="clickBtn()" />
+          </div>
+            <!-- <p>あなたの数字</p> -->
+          <!-- <div id="your-number">
+            <span id="your-number1"></span>
+            <span id="your-number2"></span>
+            <span id="your-number3"></span>
+          </div> -->
+        </div>
+
+        <div>
+          <p>*最大回答時間は5分、最大回答数は10回です。<br>それを超えるとゲームオーバーです。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "right-side">
+      <div>
+        <table border = "1">
+          <tr>
+            <th></th><th class = "table-yournumber">あなたの推理</th><th class = "table-hit-blow">Hit</th><th class = "table-hit-blow">Blow</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class = "dialog-container">
+    <dialog id="dialogOK">
+      <center>
+        <div class = "left-dialog">
+          <p class = "game-clear">ゲームクリア！</p>
+          <u>かかった時間</u><p class = "time"></p>
+          <u>回答回数</u><p class = "responses"></p>
+        </div>
+        <div class = "right-dialog">
+          <span>答えは   </span><span class = "answer"></span><span>   でした！</span>
+        </div>
+        <br>
+        <input type="button" value="閉じる" onclick="dialogOK_Close()">
+      </center>
+    </dialog>
+
+    <dialog id="dialogNG">
+      <center>
+        <p class = "game-clear">ゲームオーバー！<br>10回回答していまいました。。。</p>
+        <u>かかった時間</u><p class = "time"></p>
+        <u>回答回数</u><p class = "responses"></p>
+        <span>答えは   </span><span class = "answer"></span><span>   でした！</span>
+        <br>
+        <input type="button" value="閉じる" onclick="dialogNG_Close()">
+      </center>
+    </dialog>
+  </div>
+
+  <script type="text/javascript" src="time-count.js"></script>
+  <script type="text/javascript" src="high-and-blow.js"></script>
+</body>
+
+</html>
