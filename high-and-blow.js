@@ -1,5 +1,4 @@
 'use strict'
-// 1行目に記載している 'use strict' は削除しないでください
 
 // 答えをランダムに生成
 const randomNumber = [];
@@ -23,7 +22,6 @@ for (let i = 0; i < 3; i++) {
   randomNumber.push(num);
   console.log("random number is " + randomNumber);
 }
-
 
 // ボタンを押したときの動作
 function clickBtn() {
