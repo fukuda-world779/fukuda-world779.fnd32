@@ -29,6 +29,8 @@ function clickBtn() {
   let hitCount = 0;
   let blowCount = 0;
 
+  count++;
+
   const num = document.getElementById("num1");
 
   const num1 = Number(document.getElementById("num1").value);
@@ -51,7 +53,7 @@ function clickBtn() {
   const line = table.appendChild(document.createElement("tr"));
 
   const responseCount = line.appendChild(document.createElement("th"));
-  responseCount.textContent = count + 1;
+  responseCount.textContent = count;
   const yourNumber = line.appendChild(document.createElement("td"));
   yourNumber.textContent = num1 + " " + num2 + " " + num3;
 
@@ -91,7 +93,7 @@ function clickBtn() {
     dialog.showModal();
   }
 
-  if (count === 9) {
+  if (count === 10) {
     stopFlag = 1;
     button.disabled = "disabled";
     responseTime = hour + ":" + min + ":" + sec;
@@ -115,7 +117,7 @@ function clickBtn() {
   document.getElementsByClassName("responses")[0].innerText = String(count);
   document.getElementsByClassName("answer")[0].innerText = randomNumber[0] + " " + randomNumber[1] + " " + randomNumber[2];
 
-  count++;
+  
 }
 
 function dialog_Close() {
@@ -149,7 +151,7 @@ function timer() {
     document.getElementById("count-timer").textContent = hour + ":" + min + ":" + sec;
   }
 
-  if (pass === 30) { //制限時間を300秒とする
+  if (pass === 300) { //制限時間を300秒とする
     const button = document.getElementById("sendbutton");
     button.disabled = "disabled";
     responseTime = hour + ":" + min + ":" + sec;
