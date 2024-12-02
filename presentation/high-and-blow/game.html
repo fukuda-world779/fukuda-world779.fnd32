@@ -16,7 +16,7 @@
     <div class = "left-side">
       <div>
         <div>
-          <span id = "count-timer"></span>
+          <p id = "count-timer"></p>
         </div>
 
         <div class = "response-zone">
@@ -36,7 +36,7 @@
           </div> -->
         </div>
 
-        <div>
+        <div class = "caution">
           <p>*最大回答時間は5分、最大回答数は10回です。<br>それを超えるとゲームオーバーです。</p>
         </div>
       </div>
@@ -54,34 +54,30 @@
   </div>
 
   <div class = "dialog-container">
-    <dialog id="dialogOK">
+    <!-- <dialog id="dialogOK">
       <center>
-        <div class = "left-dialog">
-          <p class = "game-clear">ゲームクリア！</p>
-          <u>かかった時間</u><p class = "time"></p>
-          <u>回答回数</u><p class = "responses"></p>
-        </div>
-        <div class = "right-dialog">
-          <span>答えは   </span><span class = "answer"></span><span>   でした！</span>
-        </div>
-        <br>
-        <input type="button" value="閉じる" onclick="dialogOK_Close()">
-      </center>
-    </dialog>
-
-    <dialog id="dialogNG">
-      <center>
-        <p class = "game-clear">ゲームオーバー！<br>10回回答していまいました。。。</p>
+        <div><p class = "game-clear">ゲームクリア！</p></div>
         <u>かかった時間</u><p class = "time"></p>
         <u>回答回数</u><p class = "responses"></p>
         <span>答えは   </span><span class = "answer"></span><span>   でした！</span>
         <br>
-        <input type="button" value="閉じる" onclick="dialogNG_Close()">
+        <input type="button" value="閉じる" onclick="dialogOK_Close()">
+      </center>
+    </dialog> -->
+
+    <dialog id="dialog">
+      <center>
+        <div id = dialog-title></div>
+        <u>かかった時間</u><p class = "time"></p>
+        <u>回答回数</u><p class = "responses"></p>
+        <p id = "margin-bottom"><span>答えは   </span><span class = "answer"></span><span>   でした！</span></p>
+        <br>
+        <input type="button" value="閉じる" onclick="dialog_Close()">
       </center>
     </dialog>
   </div>
 
-  <script type="text/javascript" src="time-count.js"></script>
+  <!-- <script type="text/javascript" src="time-count.js"></script> -->
   <script type="text/javascript" src="high-and-blow.js"></script>
 </body>
 
