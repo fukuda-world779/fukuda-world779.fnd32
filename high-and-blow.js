@@ -13,9 +13,9 @@ for (let i = 0; i < 3; i++) {
 
   for (let j = 0; j < i; j++) {
     while (num === randomNumber[j]) {
-      console.log("num randomNumber" + num + " " + randomNumber[j]);
+      // console.log("num randomNumber" + num + " " + randomNumber[j]);
       num = Math.floor(Math.random() * 10);
-      console.log("num randomNumber" + num + " " + randomNumber[j]);
+      // console.log("num randomNumber" + num + " " + randomNumber[j]);
     }
   }
 
@@ -46,7 +46,7 @@ function clickBtn() {
   yourNumbers.push(num2);
   yourNumbers.push(num3);
 
-  console.log("your number is " + yourNumbers);
+  // console.log("your number is " + yourNumbers);
   const table = document.getElementsByTagName("tbody")[0];
   const line = table.appendChild(document.createElement("tr"));
 
@@ -60,12 +60,12 @@ function clickBtn() {
   for (let i = 0; i < 3; i++) {
     if (yourNumbers[i] === randomNumber[i]) {
       hitCount += 1;
-      console.log("hiCount++");
+      // console.log("hiCount++");
     } else if (yourNumbers[i] === randomNumber[0] || yourNumbers[i] === randomNumber[1] || yourNumbers[i] === randomNumber[2]) {
       blowCount += 1;
     }
-    console.log("your number is " + yourNumbers[i] + "type " + typeof yourNumbers[i]);
-    console.log("random number is " + randomNumber[i] + "type " + typeof randomNumber[i]);
+    // console.log("your number is " + yourNumbers[i] + "type " + typeof yourNumbers[i]);
+    // console.log("random number is " + randomNumber[i] + "type " + typeof randomNumber[i]);
   }
 
   const hit = document.createElement("td");
@@ -78,7 +78,7 @@ function clickBtn() {
   line.appendChild(blow);
 
   if (hitCount === 3) {
-    console.log("hit!");
+    // console.log("hit!");
     stopFlag = 1;
     button.disabled = "disabled";
     responseTime = hour + ":" + min + ":" + sec;
@@ -109,7 +109,7 @@ function clickBtn() {
   }
 
 
-  console.log("count is " + count);
+  // console.log("count is " + count);
 
   document.getElementsByClassName("time")[0].innerText = responseTime;
   document.getElementsByClassName("responses")[0].innerText = String(count);
@@ -132,18 +132,18 @@ let pass = 0;
 
 function timer() {
   now = new Date();
-  console.log(start);
-  console.log(now);
+  // console.log(start);
+  // console.log(now);
 
   pass = parseInt((now.getTime() - start.getTime()) / 1000 - 2); //秒単位の経過時間 アニメーション時間の2秒をマイナスする
-  console.log(pass);
-  console.log(typeof pass);
+  // console.log(pass);
+  // console.log(typeof pass);
 
   hour = parseInt(pass / 60 / 60);
   min = parseInt(pass / 60 % 60);
   sec = pass % 60;
 
-  console.log(hour + ":" + min + ":" + sec);
+  // console.log(hour + ":" + min + ":" + sec);
 
   if (pass >= 0) {
     document.getElementById("count-timer").textContent = hour + ":" + min + ":" + sec;
