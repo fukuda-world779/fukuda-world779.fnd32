@@ -44,33 +44,6 @@ function clickBtn() {
     return;
   }
 
-  // num.addEventListener('keyup', function() {
-  //   const num4 = Number(document.getElementById("num1").value);
-  //   if(num4) {
-  //     // ボタンのdisabled属性を取り除く
-  //     button.disabled = null;
-  //   } else {
-  //     // ボタンにdisabledを設定する
-  //     button.disabled = "disabled";
-  //   }
-  // })
-
-
-
-  // if (num1 === num2 || num2 === num3 || num3 === num1) {
-  //   button.disabled = "disabled";
-  // } else {
-  //   button.disabled = null;
-  // }
-
-  // reasoningNumber["number"] = num1;
-  // reasoningNumber["hit"] = num2;
-  // reasoningNumber["blow"] = num3;
-
-  // reasoningNumbers.push(reasoningNumber);
-
-  // console.log(reasoningNumbers);
-
   yourNumbers.push(num1);
   yourNumbers.push(num2);
   yourNumbers.push(num3);
@@ -79,26 +52,12 @@ function clickBtn() {
   const table = document.getElementsByTagName("tbody")[0];
   const line = table.appendChild(document.createElement("tr"));
 
-  // const yourNumber = document.createElement("td");
   const responseCount = line.appendChild(document.createElement("th"));
   responseCount.textContent = count + 1;
   const yourNumber = line.appendChild(document.createElement("td"));
   yourNumber.textContent = num1 + " " + num2 + " " + num3;
 
-
-
-  // const tr = document.getElementsByTagName("tr");
   line.appendChild(yourNumber);
-
-
-  // for (let i = 0; i < reasoningNumbers.length; i++) {
-  //   document.getElementById("your-number1").textContent = reasoningNumbers[i].number.value;
-  //   document.getElementById("your-number2").textContent = reasoningNumbers[i].hit.value;
-  //   document.getElementById("your-number3").textContent = reasoningNumbers[i].blow.value;
-  // }
-  // num1.disabled = true;
-  // num2.disabled = true;
-  // num3.disabled = true;
 
   for (let i = 0; i < 3; i++) {
     if (yourNumbers[i] === randomNumber[i]) {
@@ -113,11 +72,9 @@ function clickBtn() {
 
   const hit = document.createElement("td");
   hit.textContent = hitCount;
-  // hit.className = 'hit-blow';
 
   const blow = document.createElement("td");
   blow.textContent = blowCount;
-  // blow.className = 'hit-blow';
 
   line.appendChild(hit);
   line.appendChild(blow);
@@ -158,27 +115,9 @@ function clickBtn() {
 
   document.getElementsByClassName("time")[0].innerText = responseTime;
   document.getElementsByClassName("responses")[0].innerText = String(count);
-
-  // document.getElementsByClassName("time")[1].innerText = responseTime;
-  // document.getElementsByClassName("responses")[1].innerText = String(count);
-
   document.getElementsByClassName("answer")[0].innerText = randomNumber[0] + " " + randomNumber[1] + " " + randomNumber[2];
-  // document.getElementsByClassName("answer")[1].innerText = randomNumber[0] + " " + randomNumber[1] + " " + randomNumber[2];
 
   count++;
-
-
-  // const time = document.getElementsByClassName("time");
-  // time[0].innerText = responseTime;
-
-  // const responses = document.getElementsByClassName("responses");
-  // responses[0].innerText = String(count);
-
-  // const time = document.getElementsByClassName("time");
-  // time[1].innerText = responseTime;
-
-  // const responses = document.getElementsByClassName("responses");
-  // responses[1].innerText = String(count);
 }
 
 function dialog_Close() {
@@ -240,8 +179,3 @@ function timer() {
 }
 
 timer();
-
-// function dialog_Close() {
-//   dialog.close();
-// }
-
