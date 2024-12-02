@@ -14,9 +14,31 @@
     <video src="./images/background-movie.mp4" autoplay loop muted playsinline></video>
     <div class="welcome">
       <h1>ようこそ！<br>Hit and Blow</h1>
-      <button onclick="location.href='./game.html'">Hit and Blowを始める</button>
+      <button onclick="location.href='./game.html'">Hit and Blowを始める</button><br><br><br>
+      <p type = "button" id="openDialog"><u>Hit and Blowとは</u></p>
     </div>
+    <dialog id="indexDialog">
+      <center>
+        <div id = dialog-title></div>
+        <p><u><b>ルール</b></u></p>
+        <p> コンピュータが選んだ3桁の数字を当てるゲームです。
+          重複しない数字を予測して入力すると、正解の数字と比べた結果が返ってきます。<br><br>
+          桁の位置と数字が同じだとHit。<br>桁の位置は違うが数字が同じだとBlow。<br><br>
+          これらの情報から数字を予測し10回以内に当ててください。<br>制限時間は5分です。</p>
+
+        <p><u>例)　コンピューターの選んだ数字(正解):123</u></p>
+        <p><u>①予想した数字:014</u></p>
+        <p>2桁目の"1"が正解の1桁目の"1"と一致している。<br>
+          桁は同じではないので、　<b>Hit=0, Blow=1</b>　となる。</p>
+
+        <p><u>②予想した数字:103</u></p>
+        <p>1桁目の"1"は正解の1桁目の"1"と、3桁目の"3"は正解の3桁目の"3"と一致している。<br>
+          そのため、　<b>Hit=2, Blow=0</b>　となる。</p>
+        <button id = "closeDialog" type="button">閉じる</button>
+      </center>
+    </dialog>
   </div>
+  <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>
